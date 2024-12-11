@@ -1,0 +1,202 @@
+{% extends 'show/base.html' %}
+{% load static %}
+{% block link %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>{% endblock %}
+{% block title %}AI Karate Instructor{% endblock %}
+
+{% block go-down %}
+    <a href="#features" class="go-down">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+    </a>
+{% endblock %}
+
+{% block main %}
+<!-- Start Features -->
+<section class="features" id="features">
+    <h2 class="main-title">Features</h2>
+    <div class="container">
+        <div class="box quality">
+            <h2>Quality</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima</p>
+            <a href="#">More</a>
+        </div>
+        <div class="box time">
+            <h2>Time</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima</p>
+            <a href="#">More</a>
+        </div>
+        <div class="box passion">
+            <h2>Passion</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima</p>
+            <a href="#">More</a>
+        </div>
+    </div>
+</section>
+<!-- End Features -->
+
+<!-- Start Key Benefits -->
+<section class="key-benefits">
+    <h2 class="main-title">Key Benefits</h2>
+    <div class="container">
+        <div class="feature-card">
+            <h2>Real-time Posture Correction</h2>
+            <p>Get instant feedback on your movements with AI-driven accuracy.</p>
+        </div>
+        <div class="feature-card">
+            <h2>AI-driven Training Plans</h2>
+            <p>Personalized lesson plans tailored to your skill level.</p>
+        </div>
+        <div class="feature-card">
+            <h2>Interactive 3D Lessons</h2>
+            <p>Engage with holographic AI demonstrations for each move.</p>
+        </div>
+    </div>
+</section>
+<!-- End Key Benefits -->
+
+<!-- Start Our Programs -->
+<section class="programs">
+    <h2 class="main-title">Our Programs</h2>
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                    <img src="{% static 'show/images/Capoeira.png' %}" alt="" class="card-image">
+                    <h1 class="card-title">Capoeira</h1>
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                    <img src="{% static 'show/images/Karate.png' %}" alt="" class="card-image">
+                    <h1 class="card-title">Karate</h1>
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                    <img src="{% static 'show/images/Kickboxing.png' %}" alt="" class="card-image">
+                    <h1 class="card-title">Kickboxing</h1>
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                    <img src="{% static 'show/images/Kung Fu.png' %}" alt="" class="card-image">
+                    <h1 class="card-title">Kung Fu</h1>
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                <a href="" class="card-link">
+                    <img src="{% static 'show/images/Kyokushin Karate.png' %}" alt="" class="card-image">
+                    <h1 class="card-title">Kyokushin Karate</h1>
+                </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="{% static 'show/images/Taekwondo .png' %}" alt="" class="card-image">
+                        <h1 class="card-title">Taekwondo</h1>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="{% static 'show/images/Tang Soo Do.png' %}" alt="" class="card-image">
+                        <h1 class="card-title">Tang Soo Do</h1>
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+</section>
+<!-- End Our Programs -->
+
+<!-- Start Subscription -->
+<section class="subscribe">
+    <div class="image">
+        <div class="content">
+            <h2>INSPIRING, BUILDING AND REDEFINING MARTIAL ARTS</h2>
+            <p>Sign up for your free 3-day trial today!
+                All levels and complete beginners are welcome!</p>
+            <img src="{% static 'show/images/subscribe.png' %}" alt="">
+        </div>
+    </div>
+    <div class="form">
+        <div class="content">
+            <h2>Request A Discount</h2>
+            <form action="">
+                <input class="input" type="text" placeholder="Your Name" name="name">
+                <input class="input" type="email" placeholder="Your Email" name="email">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End subscription -->
+
+<!-- Start Testimonials -->
+<section class="testimonials">
+    <h2 class="main-title">Testimonials</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <p>"SenseiSphere has completely transformed my life! My confidence, discipline, and fitness have improved drastically."</p>
+            <h4>- John Doe</h4>
+            <span class="belt-level">Black Belt, Karate</span>
+        </div>
+        <div class="testimonial">
+            <p>"The instructors are world-class, and the community is incredibly supportive. I can't imagine training anywhere else."</p>
+            <h4>- Sarah Lee</h4>
+            <span class="belt-level">Blue Belt, Taekwondo</span>
+        </div>
+        <div class="testimonial">
+            <p>"The training is intense but rewarding. I've learned so much about martial arts and about myself."</p>
+            <h4>- Mark Spencer</h4>
+            <span class="belt-level">Purple Belt, Brazilian Jiu-Jitsu</span>
+        </div>
+        <div class="testimonial">
+            <p>"Joining this academy was one of the best decisions of my life. The discipline and skills I've learned are priceless."</p>
+            <h4>- Emily Davis</h4>
+            <span class="belt-level">Green Belt, Kung Fu</span>
+        </div>
+        <div class="testimonial">
+            <p>"The training environment is fantastic, and the instructors truly care about helping you grow."</p>
+            <h4>- Michael Brown</h4>
+            <span class="belt-level">Red Belt, Tang Soo Do</span>
+        </div>
+        <div class="testimonial">
+            <p>"Every session pushes me to be my best self. It's not just about martial arts—it's about personal growth."</p>
+            <h4>- Anna Wilson</h4>
+            <span class="belt-level">Black Belt, Kickboxing</span>
+        </div>
+    </div>
+</section>
+<!-- End Testimonials -->
+
+<!-- Start Subscription -->
+<section class="subscribe sub1">
+    <div class="image">
+        <div class="content">
+            <h2>INSPIRING, BUILDING AND REDEFINING MARTIAL ARTS</h2>
+            <p>Sign up for your free 3-day trial today!
+                All levels and complete beginners are welcome!</p>
+            <img src="{% static 'show/images/subscribe.png' %}" alt="">
+        </div>
+    </div>
+    <div class="form">
+        <div class="content">
+            <h2>Request A Discount</h2>
+            <form action="">
+                <input class="input" type="text" placeholder="Your Name" name="name">
+                <input class="input" type="email" placeholder="Your Email" name="email">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End subscription -->
+{% endblock %}
+
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'show/js/script.js' %}"></script>
+{% endblock %}

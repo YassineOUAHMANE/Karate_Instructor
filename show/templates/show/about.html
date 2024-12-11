@@ -1,0 +1,112 @@
+{% extends 'show/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'show/css/about.css' %}">{% endblock %}
+
+{% block go-down %}
+        <a href="#presentation" class="go-down">
+            <i class="fas fa-angle-double-down fa-2x"></i>
+        </a>
+{% endblock %}
+
+{% block main %}
+<!-- Start Presentation -->
+<section class="presentation" id="presentation">
+    <div class="container">
+        <div class="paras">
+            <p class="one">At <strong>SenseiSphere Academy</strong>, we take pride in offering an innovative approach to martial arts training, 
+                combining tradition with cutting-edge AI technology. Joining us means becoming part of a forward-thinking academy 
+                dedicated to revolutionizing how martial arts are learned and practiced.</p>
+
+            <p class="two">Founded on the vision of empowering individuals through advanced AI-driven guidance, <strong>SenseiSphere Academy</strong> 
+                integrates practical martial arts techniques with real-time feedback and personalized training programs. Our mission 
+                is to blend the wisdom of martial arts with the power of modern technology, equipping students with the skills, discipline, 
+                and confidence to excel both on and off the mat.</p>
+        </div>
+        <div class="philosophy">
+            <img src="{% static 'show/images/philosophy.png' %}" alt="">
+            <div class="text">
+                <div class="philo">
+                    <h3>Our Philosophy</h3>
+                    <p>At SenseiSphere Academy, we believe in blending the timeless discipline of martial arts with the limitless potential of technology. 
+                        Rooted in tradition yet driven by innovation, our approach empowers individuals to achieve personal growth, physical excellence, 
+                        and mental clarity through precision-guided AI training and a respect for martial arts heritage.</p>
+                </div>
+                <div class="manifesto">
+                    <h3>Our Manifesto</h3>
+                    <p>We are champions of progress. At SenseiSphere Academy, we commit to honoring the legacy of martial arts while redefining its future. 
+                        With AI as our ally, we stand for inclusivity, resilience, and mastery, inspiring a new generation of martial artists to embrace tradition, 
+                        innovation, and the pursuit of greatness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Presentation -->
+
+<!-- Start Stats -->
+<section class="stats" id="stats">
+    <h2>Our Awesome Stats</h2>
+    <div class="container">
+        <div class="box">
+            <i class="far fa-user fa-2x fa-fw"></i>
+            <span class="number" data-goal="150">150</span>
+            <span class="text">Clients</span>
+        </div>
+        <div class="box">
+            <i class="fas fa-code fa-2x fa-fw"></i>
+            <span class="number" data-goal="135">135</span>
+            <span class="text">Projects</span>
+        </div>
+        <div class="box">
+            <i class="fas fa-globe-asia fa-2x fa-fw"></i>
+            <span class="number" data-goal="50">50</span>
+            <span class="text">Countries</span>
+        </div>
+        <div class="box">
+            <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
+            <span class="number" data-goal="500">500</span>
+            <span class="text">Money</span>
+        </div>
+    </div>
+</section>
+<!-- End Stats -->
+
+<!-- Start Testimonials -->
+<section class="testimonials">
+    <h2 class="main-title">Testimonials</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <p>"SenseiSphere has completely transformed my life! My confidence, discipline, and fitness have improved drastically."</p>
+            <h4>- John Doe</h4>
+            <span class="belt-level">Black Belt, Karate</span>
+        </div>
+        <div class="testimonial">
+            <p>"The instructors are world-class, and the community is incredibly supportive. I can't imagine training anywhere else."</p>
+            <h4>- Sarah Lee</h4>
+            <span class="belt-level">Blue Belt, Taekwondo</span>
+        </div>
+        <div class="testimonial">
+            <p>"The training is intense but rewarding. I've learned so much about martial arts and about myself."</p>
+            <h4>- Mark Spencer</h4>
+            <span class="belt-level">Purple Belt, Brazilian Jiu-Jitsu</span>
+        </div>
+        <div class="testimonial">
+            <p>"Joining this academy was one of the best decisions of my life. The discipline and skills I've learned are priceless."</p>
+            <h4>- Emily Davis</h4>
+            <span class="belt-level">Green Belt, Kung Fu</span>
+        </div>
+        <div class="testimonial">
+            <p>"The training environment is fantastic, and the instructors truly care about helping you grow."</p>
+            <h4>- Michael Brown</h4>
+            <span class="belt-level">Red Belt, Tang Soo Do</span>
+        </div>
+        <div class="testimonial">
+            <p>"Every session pushes me to be my best self. It's not just about martial arts—it's about personal growth."</p>
+            <h4>- Anna Wilson</h4>
+            <span class="belt-level">Black Belt, Kickboxing</span>
+        </div>
+    </div>
+</section>
+<!-- End Testimonials -->
+{% endblock %}

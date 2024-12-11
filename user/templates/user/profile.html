@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'user/css/profile.css' %}" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container">
+        <a href="{% url 'home' %}" class="logo">SenseiSphere</a>
+        <ul class="main-nav" id="main-nav">
+          <li><a href="{% url 'dashboard' %}" section="dashboard">Dashboard</a></li>
+          <li><a section="generals">Generals</a></li>
+          <li><a section="privacy">privacy</a></li>
+          <li><a id="logoutButton">logout</a></li>
+        </ul>
+        <form id="logoutForm" action="{% url 'logout' %}" method="post" style="display: none;">
+          {% csrf_token %}
+        </form>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <div class="profile">
+      <!-- Start Generals  -->
+      <section class="generals active" id="generals">
+        <div class="container">
+          <h2 class="main-title">Generals</h2>
+          <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="image-box">
+              <img src="{{ user.profile.profile_image.url }}" alt="walo" />
+              <label class="file-input">
+                Upload New Photo
+                <input type="file" name="profile-image" class="IH" />
+              </label>
+              <button class="btn-reset" type="reset">Reset</button>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="{{ user.username }}" />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="{{ user.email }}" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <button class="btn" type="submit" name="general-change">
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- End Generals  -->
+
+      <!-- Start Privacy  -->
+      <section class="privacy">
+        <h2 class="main-title">privacy</h2>
+        <div class="container">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="input-box">
+              <label>current password</label>
+              <input type="text" name="current_password" />
+            </div>
+            <div class="input-box">
+              <label>new password</label>
+              <input type="text" name="new_password" />
+            </div>
+            <div class="input-box">
+              <label>repeat new password</label>
+              <input type="text" name="confirm_password" />
+            </div>
+            <button type="submit" name="password-changed">
+              Change Password
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- End Privacy  -->
+      
+      <!-- Start Dashboard -->
+      <section class="dashboard">
+        <h2 class="main-title">Dashboard</h2>
+        <div class="container">
+          <div class="martial-arts-list">
+            <ul id="martialArts">
+                {% for martial_art in martial_arts %}
+                    <li data-id="{{ martial_art.martial_art_id }}">{{ martial_art.name }}</li>
+                {% endfor %}
+            </ul>
+          </div>
+
+          <div class="movements-list" id="movementsList">
+              <h2 id="selectedMartialArt">Select a Martial Art</h2>
+              <ul id="movements"></ul>
+          </div>
+
+          <div class="image-viewer" id="imageViewer">
+              <h2 id="selectedMovement">Select a Movement</h2>
+              <img id="movementImage" src="" alt="Movement Image" style="display: none;">
+          </div>
+        </div>
+    </section>
+    <!-- End Dashboard -->
+    </div>
+    <!-- End Profile -->
+    <script src="{% static 'user/js/profile.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <title>Progression Dashboard</title>
+    <link rel="stylesheet" href="{% static 'user/css/dashboard.css' %}" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    <!-- Start Header -->
+    <header>
+        <div class="container">
+            <a href="{% url 'home' %}" class="logo">SenseiSphere</a>
+            <ul class="main-nav" id="main-nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'programs' %}">Programs</a></li>
+                <li><a href="{% url 'team' %}">Team</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                {% if not user.is_authenticated %}
+                    <script>
+                        window.location.href = '{% url "signup" %}';
+                    </script>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main Content -->
+    <div class="dashboard">
+        <h3>Progress History</h3>
+        <div class="dashboard">
+            <h3>Progress History</h3>
+            <div class="move-selector-container">
+                <h4>Select a Move to View Progression:</h4>
+                <div class="scrollable-container" id="scrollable-container"></div>
+            </div>
+        </div>
+        
+        <script>
+            const progressData = JSON.parse('{{ progress_data | safe }}');
+        
+            const container = document.getElementById('scrollable-container');
+        
+            if (container) {
+                // Iterate over the `progressData` array to create and append the cards
+                progressData.forEach((entry, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'move-card';
+                    card.setAttribute('data-id', index);
+                    card.setAttribute('data-name', entry.movement_name);
+        
+                    const img = document.createElement('img');
+                    img.src = `/static/${entry.image_path}`;
+                    img.alt = entry.movement_name;
+                    img.className = 'move-image';
+        
+                    const name = document.createElement('p');
+                    name.textContent = entry.movement_name;
+        
+                    card.appendChild(img);
+                    card.appendChild(name);
+                    container.appendChild(card);
+                });
+            } else {
+                console.error("Container with ID 'scrollable-container' not found.");
+            }
+        </script>
+        
+
+        <div id="chartContainer" style="display: none;">
+            <h3 id="chartTitle"></h3>
+            <canvas id="progressionChart"></canvas>
+            <p id="emptyMessage" style="color: #888; font-size: 1.2rem;">No progress data available.</p>
+        </div>
+    </div>
+    <!-- End Main Content -->
+
+    <script>
+        document.querySelectorAll('.move-card').forEach(card => {
+    card.addEventListener('click', function() {
+        resetCanvas();
+        const moveId = this.getAttribute('data-id');
+        const moveData = progressData[moveId]?.progress_scores;
+
+        if (moveData && moveData.length > 0) {
+            document.getElementById('chartTitle').textContent = `Progression for ${this.getAttribute('data-name')}`;
+            
+            renderChart(moveData); // Update the chart with the new data
+            document.getElementById('chartContainer').style.display = 'block';
+            document.getElementById('emptyMessage').style.display = 'none';
+        } else {
+            document.getElementById('chartContainer').style.display = 'none';
+            document.getElementById('emptyMessage').style.display = 'block';
+        }
+        });
+        });
+        function resetCanvas() {
+            const oldCanvas = document.getElementById('progressionChart');
+            const container = oldCanvas.parentElement;
+
+            // Remove the old canvas
+            container.removeChild(oldCanvas);
+
+            // Create a new canvas element
+            const newCanvas = document.createElement('canvas');
+            newCanvas.id = 'progressionChart';
+            container.appendChild(newCanvas);
+        }
+        function renderChart(data) {
+            const ctx = document.getElementById('progressionChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: data.length }, (_, i) => i + 1),
+                    datasets: [{
+                        label: 'Progress Score',
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Attempt Number' }
+                        },
+                        y: {
+                            title: { display: true, text: 'Score' },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    <p id="emptyMessage" style="color: #888; font-size: 1.2rem;">No progress data available.</p>
+
+</body>
+</html>

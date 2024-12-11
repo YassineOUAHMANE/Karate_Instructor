@@ -1,0 +1,165 @@
+/* Start Contact */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(180deg, #fff, #e3e5d9);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact .contact-img {
+    flex-basis: 48%;
+    padding: 20px;
+}
+
+
+.contact .contact-img img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact .contact-form {
+    flex-basis: 48%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 25px;
+    text-align: center;
+}
+
+.contact .contact-form h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000b3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact .contact-form p {
+    color: #000000b3;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.contact .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact .contact-form input,  
+.contact .contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: border-color caret-color 0.3s ease;
+}
+
+.contact .contact-form input:focus, 
+.contact .contact-form textarea:focus {
+    border-color: var(--main-color);
+    outline: none;
+    caret-color: var(--main-color);
+}
+
+.contact .contact-form [type="submit"] {
+    display: inline-block;
+    width: 90%;
+    padding: 15px 12px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, var(--main-color), var(--alt-color));
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact .contact-form [type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .contact .contact-img {
+        display: none;
+    }
+
+    .contact .contact-form {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 1206px) and (min-width: 992px) {
+    .contact {
+        flex-wrap: wrap;
+        gap: 30px; 
+    }
+
+    .contact .contact-img, 
+    .contact .contact-form {
+        flex-basis: 45%; 
+        max-width: 45%;
+    }
+
+    .contact .contact-img img {
+        width: 350px;
+        max-width: 100%;
+    }
+
+    .contact .contact-form {
+        padding: 20px;
+    }
+
+    .contact .contact-form h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .contact {
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+
+    .contact .contact-img, 
+    .contact .contact-form {
+        flex-basis: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .contact .contact-img img {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .contact .contact-form {
+        padding: 20px; 
+        margin-top: 20px; 
+        }
+
+    .contact .contact-form h1 {
+        font-size: 20px;
+    }
+}
+/* End Contact */
+
+/* Start Instagram + Footer */
+
+.instagram-section footer {
+    background: black;
+}
+
+/* End Instagram + Footer */

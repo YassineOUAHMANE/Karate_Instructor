@@ -1,0 +1,33 @@
+{% extends 'show/base.html' %}
+{% load static %}
+{% block title %}Contact Us{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'show/css/contact.css' %}">{% endblock %}
+
+{% block go-down %}
+    <a href="#contact" class="go-down">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+    </a>
+{% endblock %}
+
+{% block main %}
+<!-- Start Contact -->
+<section class="contact" id="contact">
+    <div class="contact-form">
+        <h1>Contact <span>Us</span></h1>
+        <p>We are Available for you.<br/> Connect with us via phone : 0123456789
+            or email : example@gmail.com
+        </p>
+        <form method="post">
+            <input type="text" placeholder="Your name" name="name" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="subject" placeholder="Write a Subject" required>
+            <textarea name="content" cols="30" rows="10" placeholder="Your message" required></textarea>
+            <input type="submit" name="submission" value="Submit" class="btn">
+        </form>
+    </div>
+    <div class="contact-img">
+        <img src="{% static 'show/images/Karate.png' %}" alt=""> 
+    </div>
+</section>
+<!-- End Contact -->
+{% endblock %}

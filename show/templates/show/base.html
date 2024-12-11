@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Normalize -->
+    <link rel="stylesheet" href="{% static 'show/css/normalize.css' %}" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    {% block link %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'show/css/styles.css' %}" />
+    {% block css %} {% endblock %}
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container">
+        <a href="{% url 'home' %}" class="logo">SenseiSphere</a>
+        <ul class="main-nav" id="main-nav">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'programs' %}">Programs</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'profile' %}"
+              ><img
+                src="{{ user.profile.profile_image.url }}"
+                alt="Profile"
+                class="profile"
+            /></a>
+          </li>
+          {% else %}
+          <li><a href="{% url 'signup' %}">SignUp</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Landing -->
+    <section class="landing">
+      <div class="container">
+        <div class="text">
+          <h1>Welcome to SenseiSphere academy 💪🏻</h1>
+          <p>
+            Step into the future of martial arts training with advanced AI
+            guidance.
+          </p>
+          <a href="{% url 'signup' %}" class="btn-glow">Begin Your Journey</a>
+        </div>
+        <div class="image">
+          <img src="{% static 'show/images/image.png' %}" alt="" />
+        </div>
+      </div>
+      {% block go-down %}
+      <a href="" class="go-down">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+      </a>
+      {% endblock %}
+    </section>
+    <!-- End Landing -->
+
+    {% block main %} {% endblock %}
+
+    <!-- Start Instagram -->
+    <section class="instagram-section">
+      <div class="instagram-header">
+        <h2>OUR INSTAGRAM</h2>
+        <hr />
+        <button class="instagram-button">
+          <i class="fa-brands fa-instagram"></i>Follow on Instagram
+        </button>
+      </div>
+      <div class="trial-offer">
+        <div class="trial-text">
+          <h3>START YOUR 3 DAYS FREE!</h3>
+          <p>ATTEND AS MANY CLASSES AS YOU WANT DURING YOUR TRIAL</p>
+        </div>
+        <button class="trial-button">
+          START TRAINING TODAY FOR FREE! <span>&gt;</span>
+        </button>
+      </div>
+    </section>
+    <!-- End Instagram -->
+
+    <!-- Start Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-about">
+          <h3>About SenseiSphere</h3>
+          <p>
+            SenseiSphere is dedicated to empowering individuals through martial
+            arts. Join us to build strength, discipline, and confidence.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'programs' %}">Programs</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <!-- à ajouter -->
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Martial Arts Ave, Training
+            City
+          </p>
+          <p><i class="fas fa-phone-alt"></i> +1 234 567 890</p>
+          <p><i class="fas fa-envelope"></i> contact@senseisphere.com</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SenseiSphere. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    {% block script %} {% endblock %}
+  </body>
+</html>

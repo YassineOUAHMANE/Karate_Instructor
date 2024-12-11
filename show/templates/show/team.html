@@ -1,0 +1,142 @@
+{% extends 'show/base.html' %} 
+{% load static %} 
+{% block title %}Team {% endblock %} 
+
+{% block css %}<link rel="stylesheet" href="{% static 'show/css/team.css' %}" />{% endblock %} 
+
+{% block go-down %}
+<a href="#skills" class="go-down">
+  <i class="fas fa-angle-double-down fa-2x"></i>
+</a>
+{% endblock %} 
+
+{% block main %}
+<!-- Start Team -->
+<section class="our-skills" id="skills">
+  <h2 class="main-title">Members</h2>
+  <div class="team-container">
+    <!-- Member 1 -->
+    <div class="team-member">
+      <img src="{% static '/show/images/yassir.jpg' %}" alt="Member 1" />
+      <div class="skills">
+        <h3>Yasser</h3>
+        <div class="skill">
+          <h4>HTML <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>CSS <span>85%</span></h4>
+          <div class="progress"><span style="width: 85%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript <span>70%</span></h4>
+          <div class="progress"><span style="width: 70%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>Python <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-member">
+      <img src="{% static '/show/images/ouahmane.jpg' %}" alt="Member 2" />
+      <div class="skills">
+        <h3>Yassine</h3>
+        <div class="skill">
+          <h4>gayness <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>gayness <span>85%</span></h4>
+          <div class="progress"><span style="width: 85%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>gayness <span>70%</span></h4>
+          <div class="progress"><span style="width: 70%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>gayness <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-member">
+      <img src="{% static '/show/images/youness.jpg' %}" alt="Member 3" />
+      <div class="skills">
+        <h3>Youness</h3>
+        <div class="skill">
+          <h4>HTML <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>CSS <span>85%</span></h4>
+          <div class="progress"><span style="width: 85%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript <span>70%</span></h4>
+          <div class="progress"><span style="width: 70%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>Python <span>80%</span></h4>
+          <div class="progress"><span style="width: 80%"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Team -->
+
+<!-- Start Team Members -->
+<section class="team" id="team">
+  <h2 class="main-title">Get In Touch</h2>
+  <div class="container">
+    <div class="box">
+      <div class="data">
+        <img src="{% static '/show/images/yassir.jpg' %}" alt="" />
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Yasser</h3>
+        <p>Simple Short Description</p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="data">
+        <img src="{% static '/show/images/ouahmane.jpg' %}" alt="" />
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Yassine</h3>
+        <p>Simple Short Description</p>
+      </div>
+    </div>
+    <div class="box">
+      <div class="data">
+        <img src="{% static '/show/images/youness.jpg' %}" alt="" />
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Youness</h3>
+        <p>Simple Short Description</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Team Members -->
+{% endblock %}

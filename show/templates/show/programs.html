@@ -1,0 +1,27 @@
+{% extends 'show/base.html' %}
+{% load static %}
+{% block title %}Programs{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'show/css/programs.css' %}">{% endblock %}
+
+{% block go-down %}
+<a href="#programs" class="go-down">
+    <i class="fas fa-angle-double-down fa-2x"></i>
+</a>
+{% endblock %}
+
+{% block main %}
+<!-- Start Programs -->
+<section class="programs" id="programs">
+    <h2 class="main-title">Our Programs</h2>
+    <div class="container">
+        {% for martial_art in martial_arts %}
+            <div class="program-card">
+                <h3 class="title">{{ martial_art.name }}</h3>
+                <img src="{{ martial_art.image.url }}" alt="">
+                <a href=" {% url 'martial_art_detail' slug=martial_art.slug %} ">Program Details</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- End Programs -->
+{% endblock %}

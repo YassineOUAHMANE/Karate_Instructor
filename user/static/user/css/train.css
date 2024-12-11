@@ -1,0 +1,97 @@
+/* Variables */
+:root {
+    --main-color: red;
+    --alt-color: #6b0000;
+    --main-transition: 0.3s;
+    --section-padding: 50px;
+  }
+  
+  /* General Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, #fff, #e3e5d9 80%);
+    color: #333;
+  }
+  
+  /* Heading */
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--alt-color);
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: var(--section-padding);
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color var(--main-transition);
+  }
+  
+  select:focus {
+    border-color: var(--alt-color);
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--main-transition);
+  }
+  
+  button:hover {
+    background-color: var(--alt-color);
+  }
+  
+  /* Video */
+  video {
+    display: block;
+    margin: 30px auto;
+    width: 98%;
+    height: 600px;
+    max-width: 1000px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Score Popup */
+  #scorePopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 20px;
+  }
+  

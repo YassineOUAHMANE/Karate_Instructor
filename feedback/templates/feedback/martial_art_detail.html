@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ martial_art.name }}</title>
+    <link rel="stylesheet" href="{% static 'feedback/css/martial_art_detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ martial_art.name }}</h1>
+        <img src="{{ martial_art.image.url }}" alt="{{ martial_art.name }}" style="max-width: 100%; height: auto;">
+        <p>{{ martial_art.description }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Start Presentation */
+.presentation {
+    background: linear-gradient(180deg, #fff, #e3e5d9);
+    padding: 15px;
+    color: black;
+}
+
+.presentation .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.presentation .container .paras > p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.presentation .container .paras > p > strong {
+    text-decoration: underline;
+}
+
+.presentation .container .philosophy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.presentation .container .philosophy img {
+    flex-basis: 48%;
+    width: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.presentation .container .philosophy .text {
+    flex-basis: 48%;
+}
+
+.presentation .container .philosophy .text > div {
+    margin-bottom: 50px;
+}
+
+.presentation .container .philosophy .text > div > h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.presentation .container .philosophy .text > div > p {
+    font-size: 20px;
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .presentation .container .philosophy {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .presentation .container .philosophy img {
+        flex-basis: 100%;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .presentation .container .philosophy .text {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .presentation .container .philosophy .text > div > h3 {
+        font-size: 28px;
+    }
+
+    .presentation .container .philosophy .text > div > p {
+        font-size: 18px;
+    }
+
+    .presentation .container .paras > p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .presentation .container {
+        padding: 20px;
+    }
+
+    .presentation .container .philosophy {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .presentation .container .philosophy img {
+        flex-basis: 45%;
+        max-width: 500px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .presentation .container .philosophy .text {
+        flex-basis: 50%;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .presentation .container .philosophy .text > div > h3 {
+        font-size: 28px;
+    }
+
+    .presentation .container .philosophy .text > div > p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .presentation .container .paras {
+        padding: 0 20px;
+    }
+
+    .presentation .container .paras > p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .presentation .container .philosophy {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .presentation .container .philosophy img {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .presentation .container .philosophy .text {
+        flex-basis: 100%;
+    }
+
+    .presentation .container .philosophy .text > div > h3 {
+        font-size: 24px;
+    }
+
+    .presentation .container .philosophy .text > div > p {
+        font-size: 16px;
+    }
+
+    .presentation .container .paras > p {
+        font-size: 16px;
+    }
+
+    .presentation .container .paras {
+        padding: 0 10px;
+    }
+}
+/* End Presentation */
+
+.stats {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    background: black;
+}
+
+.stats h2 {
+    font-weight: bold;
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.stats .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stats .container .box {
+    background-color: white;
+    padding: 30px 15px;
+    text-align: center;
+    position: relative;
+    opacity: 0.8;
+    transition: var(--main-transition);
+    color: #000000b3;
+}
+
+.stats .container .box:hover {
+    opacity: 1;
+}
+
+.stats .container .box::before,
+.stats .container .box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: var(--main-color);
+    transition: 1s;
+    height: 0;
+}
+
+.stats .container .box::before {
+    top: 0;
+    right: 0;
+}
+
+.stats .container .box::after {
+    bottom: 0;
+    left: 0;
+}
+
+.stats .container .box:hover::before,
+.stats .container .box:hover::after {
+    height: 100%;
+}
+
+.stats .box .number {
+    display: block;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stats .box .text {
+    color: var(--main-color);
+    font-style: italic;
+    font-weight: bold;
+}
+/* End Stats */
+
+/* Start Testimonials */
+.testimonials {
+    background: linear-gradient(0deg, #fff, #e3e5d9);
+}
+/* End Testimonials */

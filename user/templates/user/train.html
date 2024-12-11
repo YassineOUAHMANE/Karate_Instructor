@@ -1,0 +1,78 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'user/css/train.css' %}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Movement</title>
+    <script>
+        async function startTraining() {
+            const movementId = document.getElementById("movement-select").value;
+            const csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;
+
+            const response = await fetch("", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": csrfToken,
+                },
+                body: `movement_id=${movementId}`,
+            });
+
+            const result = await response.json();
+            alert(result.message);
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Train Your Movement</h1>
+    <form onsubmit="event.preventDefault(); startTraining();">
+        {% csrf_token %}
+        <label for="movement-select">Select a Movement:</label>
+        <select id="movement-select" name="movement_id" required>
+            <option value="" disabled selected>-- Select a Movement --</option>
+            {% for movement in movements %}
+            <option value="{{ movement.movement_id }}">{{ movement.name }}</option>
+            {% endfor %}
+        </select>        
+        <button  type="submit">Start Training</button>
+    </form>    
+    <video id="videoStream" autoplay></video>
+    <div id="scorePopup" style="display: none;">Score: <span id="score"></span></div>
+    <script>
+        document.getElementById("startTraining").onclick = function() {
+            const socket = new WebSocket("ws://127.0.0.1:8000/ws/train/");
+
+            socket.onopen = function() {
+                console.log("WebSocket connected");
+                socket.send(JSON.stringify({ start: true }));
+            };
+
+            socket.onmessage = function (event) {
+                if (event.data instanceof Blob) {
+                    const videoStream = document.getElementById("videoStream");
+                    const url = URL.createObjectURL(event.data);
+                    videoStream.src = url;
+                    videoStream.onload = () => URL.revokeObjectURL(url);
+                } else {
+                    const data = JSON.parse(event.data);
+                    if (data.score) {
+                        document.getElementById("score").innerText = data.score;
+                        document.getElementById("scorePopup").style.display = "block";
+                    }
+                }
+            };
+
+            socket.onclose = function () {
+                console.log("WebSocket connection closed");
+            };
+        };
+    </script>
+
+</body>
+</html>

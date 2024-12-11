@@ -1,0 +1,55 @@
+/* Start Programs */
+.programs {
+    background: linear-gradient(180deg, #fff, #e3e5d9);
+    padding: 50px 20px;
+}
+.programs .container {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.programs .container .program-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: var(--main-transition);
+}
+
+.programs .container .program-card > h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.programs .container .program-card > img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.programs .container .program-card > a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color var(--main-transition);
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.4);
+    margin-top: 10px;
+}
+
+.programs .container .program-card > a:hover {
+    background-color: var(--alt-color);
+}
+
+/* End Programs */

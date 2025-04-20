@@ -1,5 +1,5 @@
 # Karate_Instructor
-🥋 Karate Instructor is an innovative app that helps users improve their martial arts skills. 🌟 Users can select their preferred martial art 🥷 and choose specific movements they want to practice. 💪 The app provides real-time feedback and correction 🎯 by analyzing the user's movements using advanced motion-capture technology. 📹🤖 Here is the website:
+Karate Instructor is an innovative app that helps users improve their martial arts skills with real-time feedback and correction. By selecting their preferred martial art and specific movements, users receive personalized guidance via advanced motion-capture technology. Website:
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ![Home_page](Site_web_pages/IA_Karate_instractor.png)
 ------------------------------------------------------------------------------------------------------------------------------------------------
